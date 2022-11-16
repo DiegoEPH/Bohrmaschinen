@@ -52,22 +52,48 @@ public class drillingMachine {
         this.price=price+amount;
     }
 
-    public void changePower(int watt){
-        if (watt>0)
-            this.watt= this.watt+watt;
+    public double getPrice() {
+        return price;
+    }
+    public double getPricePerWatt() {
+        return this.price / this.watt;
+    }
+
+    public boolean inInexpensive(){
+        if(watt > 500 && price < 80) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+
+    public void changePower(int watt) {
+        if (watt > 0) {
+            this.watt = this.watt + watt;
             if (watt > 100)
-                this.price=price*1.05;
+                this.price = price * 1.05;
+        }
 
 
         if (watt < 0)
-            this.price=price*0.9;
-
-
-
+            this.price = price * 0.9;
     }
 
 
-    }
+
+
+    public boolean increasePriceByPercentage(double percentage) {
+        if (percentage > 0.00)
+            this.price = price + percentage * price / 100;
+        }
+
+
+
+
+
+
 
 
 
