@@ -1,72 +1,67 @@
 public class drillingMachine {
 
 
-
     private int watt, age;
     private String name;
     private double price;
     private boolean broken;
 
 
-
-    public drillingMachine(){
-        this.watt = (int)(Math.random()*1200 + 800);
-        this.age = (int)(Math.random()*10+0);
+    public drillingMachine() {
+        this.watt = (int) (Math.random() * 1200 + 800);
+        this.age = (int) (Math.random() * 10 + 0);
         this.name = "Adolf";
-        this.price = (int)(Math.random()*450 + 50);
-        this.broken =true;
+        this.price = (int) (Math.random() * 450 + 50);
+        this.broken = true;
 
 
     }
 
 
-
-
-
-
-    public void becomeBroken(){
-        this.broken=true;
+    public void becomeBroken() {
+        this.broken = true;
     }
 
-    public void repair(){
-        if (this.broken == true){
+    public void repair() {
+        if (this.broken == true) {
             this.broken = false;
-            this.price = price*0.5;
+            this.price = price * 0.5;
         }
     }
 
-    public void aging(){
-        this.age = age+1;
-        if (this.age > 9 )
-            this.broken=true;
-    }
-    public void reactOnHighDemand(){
-        this.price = price*1.25;
+    public void aging() {
+        this.age = age + 1;
+        if (this.age > 9)
+            this.broken = true;
     }
 
-    public void showInfo(){
-        System.out.println(this.name + "," + this.price+ "," + this.broken+ ","+ this.watt);
+    public void reactOnHighDemand() {
+        this.price = price * 1.25;
     }
 
-    public void increasePrice(double amount){
-        this.price=price+amount;
+    public void showInfo() {
+        System.out.println(this.name + "," + this.price + "," + this.broken + "," + this.watt);
+    }
+
+    public void increasePrice(double amount) {
+        this.price = price + amount;
     }
 
     public double getPrice() {
         return price;
     }
+
     public double getPricePerWatt() {
         return this.price / this.watt;
     }
 
-    public boolean inInexpensive(){
-        if(watt > 500 && price < 80) {
+    public boolean inInexpensive() {
+        if (watt > 500 && price < 80) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-
 
 
     public void changePower(int watt) {
@@ -82,19 +77,14 @@ public class drillingMachine {
     }
 
 
-
-
     public boolean increasePriceByPercentage(double percentage) {
-        if (percentage > 0.00)
+        if (percentage > 0.00) {
             this.price = price + percentage * price / 100;
         }
+            if (this.price > 200)
+                return true;
 
+            return false;
+        }
 
-
-
-
-
-
-
-
-
+    }

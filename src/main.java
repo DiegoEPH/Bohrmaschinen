@@ -7,8 +7,9 @@ public class main {
         d1.repair();
         d1.aging();
         d1.reactOnHighDemand();
-        d1.increasePrice(200000000);
+        d1.increasePrice(0);
         d1.changePower(-200);
+        d1.increasePrice(20);
 
 
         drillingMachine d2= new drillingMachine();
@@ -18,6 +19,7 @@ public class main {
         d2.reactOnHighDemand();
         d2.increasePrice(123456);
         d2.changePower(200);
+        d2.increasePrice(19);
 
         drillingMachine d3= new drillingMachine();
         d3.becomeBroken();
@@ -26,7 +28,7 @@ public class main {
         d3.reactOnHighDemand();
         d3.increasePrice(88);
         d3.changePower(7000);
-
+        d3.increasePrice(25);
 
 
         d1.showInfo();
